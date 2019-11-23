@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import staticdata from '../../staticdata.json'
 
 import SEO from "../components/seo"
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import Wave from "../components/Wave"
 import Card from "../components/Card"
 import Section from "../components/Section"
