@@ -1,42 +1,45 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import React, { PureComponent } from 'react'
+import Link from 'gatsby-link'
+import './Header.css'
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+class Header extends PureComponent {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      hasScrolled: false
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', 
+    this.handleScroll)
+  }
+
+  handleScroll = (event) => {
+    const scrollTop = window.pageYOffset
+
+    if(scrollTop > 50) {
+      this.setState({ hasScrolled:true })
+    } else {
+      this.setState({ hasScrolled:false})
+    }
+  }
+
+  render() {
+    return (
+      <div className={this.state.hasScrolled ? 'Header HeaderScroll' : 'Header'}>
+    <div className="HeaderGroup">
+      <Link to="/"><button className="Logo">HASLEM MEDIA</button></Link>
+      <Link to="/">Services</Link>
+      <Link to="/">Pricing</Link>
+      <Link to="/">Contact</Link>
+      <Link to="/"><button>Get In Touch</button></Link>
     </div>
-  </header>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+  </div>
+  
+    )
+  }
 }
 
 export default Header
