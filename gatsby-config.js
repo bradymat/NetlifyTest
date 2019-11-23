@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Haslem Media`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    author: `@bradymat`,
+    keywords: `lemon`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -11,6 +12,13 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `8sbceat760i2`,
+        accessToken: `WubYrX4Y0o93uRaO-RJQEzgPC1Pi2a8DQDHONTvOmBs`,
       },
     },
     `gatsby-transformer-sharp`,

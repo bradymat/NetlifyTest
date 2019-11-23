@@ -31,8 +31,8 @@ class Header extends PureComponent {
       <div className={this.state.hasScrolled ? 'Header HeaderScroll' : 'Header'}>
     <div className="HeaderGroup">
       <Link to="/"><button className="Logo">HASLEM MEDIA</button></Link>
-      <Link to="/">Services</Link>
-      <Link to="/">Pricing</Link>
+      <Link to="/page-2">Services</Link>
+      <Link to="/test-page">Pricing</Link>
       <Link to="/">Contact</Link>
       <Link to="/"><button>Get In Touch</button></Link>
     </div>
