@@ -18,6 +18,7 @@ const CellGroup = styled.div`
     grid-template-columns: 60px auto;
     grid-gap: 25px;
     align-items: center;
+    padding-bottom: 50px;
 `
 
 const CellImage = styled.div`
