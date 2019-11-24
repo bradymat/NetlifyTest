@@ -13,7 +13,7 @@ import Header from "./header"
 import "./layout.css"
 import Footer from "./Footer"
 
-const layout = ({ children }) => {
+const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -45,8 +45,8 @@ const layout = ({ children }) => {
   )
 }
 
-layout.propTypes = {
+Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default layout
+export default Layout
